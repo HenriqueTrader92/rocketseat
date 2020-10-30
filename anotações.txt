@@ -83,6 +83,135 @@
             // Roda eventos em pilha e rodando constantemente(Call Stack)
             // Single-thread, executa somente em uma thread
             // Input e Output nao bloqueante(Non-blocking I/O), nao preciso retornar todos os dados so de uma vez, posso passar por partes
+
+        - Frameworks
+            // O mais famoso é o ExpressJs e vai ser muito utilizado no Bootcamp
+
+            // Outros frameworks sao o AdonisJs ou NestJS, muito bons também
     }
+
+    - Conceitos API REST {
+        - Como funciona?
+            // Requisição é feita pelo cliente
+            // Resposta retorna atraves de uma estrutura de dados
+            // Cliente recebe resposta e processa o resultado
+            // Rotas utilizam metodos Http: GET, POST, PUT or DELETE
+
+        // Toda resposta do back para o front retorna um Http Code, que significa qual que foi o status da resposta
+        - HTTP codes 
+            // Resposta de 3 digitos numérios 
+            // Todos que iniciam com 1 sao informativos 1xx
+            // Todos que iniciam com 2 foram que deram sucesso 2xx
+                Exemp:  200: SUCCESS
+                        201: CREATED
+            // Todos que uniciam com 3 sao de redirecionamento 3xx
+                Exemp:  301: MOVED PERMANENTLY
+            // Todos que iniciam com 4 sao de erros do cliente 4xx
+                Exemp:  400: BAD REQUEST
+                        401: UNAUTHORIZED
+                        404: NOT FOUND
+            // erros que iniciam por 5
+                // Erros direto no servidor
+    }
+
+    - Criando projeto Node {
+
+        // Começamos criando uma pasta do projeto, após isso dentro da pasta usaremos o comando abaixo para ele instalar arquivos basicos do projeto, tais como packege.json
+        - Inicializar projeto JavaScript
+        $ yarn init -y 
+        // O arquivo package.json basicamente armazena informações gerais do projeto, tais como dependencias, versao...
+
+        // Todo código de desenvolvimento será mantido nessa pasta
+        - Criar pasta 'src'
+        $ mkdir src
+
+        - Dentro da pasta 'src' criaremos um arquivo chamado index.js
+        $ cd src
+        $ touch index.js
+
+        - Já vamos iniciar o projeto utilizando o Express, ele ja vai fazer algumas configurações basicas como rotas e midlewares
+        $ yarn add express
+        // Para começarmos a utilizar o exprress precisamos importar ela dentro do arquivo src/index.js
+            .. const express = require('express');
+            .. const app = express();
+
+        - Para podermos acessar a aplicação, precisamos dedicar uma porta para ela
+            .. app.listen(3333);
+
+        - Após isso ja poderemos acessar o projeto no endereço 'localhost:3333', mas não teremos uma resposta legal, porque nao foi configurado nada para isso...
+
+        - Para essa comnunicação teremos que fazer uma rota, para isso iremos utilizar a função get do exprress
+            ..  app.get('/', (request, response) => {
+                    return response.send('Hello World');
+                });
+            // Veja que usamos arrow function, depois estudar mais sobre isso
+            // retornamos um response, que será a resposta da rota. O response pode ter várias opções, no exemplo so utilizamos para retornar a mensagem Hello World
+
+        - Comando para executar o programa
+        $ node src/index.js
+
+        - Entao após o projeto ficar rodando podemos acessar a url 'http://localhost:3333/projects' e ler a mensagem 'Hello World'
+    }
+
+    - Configurando Nodemon {
+        // Para nao precisar ficar reiniciando o servidor apos toda alteração instalaremos o Nodemom via yarn para que ele faça isso de forma automatica
+
+        - Comando para instalar Nodemom
+        $ yarn add nodemon -D
+        // Posso utilizar o comando -D para salvar ela como uma dependencia de desenvolvimento, porque ela nao vai ser utilizada quando estivermos online
+
+        - A forma mais facil de utilizar o nodemon é so colcoar ele direto no arquivo index, dessa forma...
+        $ yarn nodemon src/index.js
+
+        - Podemos facilitar a forma que usamos o nodemon, simplismente configurando no package um script para isso...
+            // No packege deixei o main como "src/index.js" para que ele entenda que o código padrao está nsse local 
+            // E adicionei um script simplimente com "dev": "nodemon"
+            // dessa forma eu posso rodar o servidor usando simplismente "yarn dev"
+            - $ yarn dev
+
+            // Ficou tudo perfeito e o packege.json ficou dessa forma...
+                {
+                    "name": "backend",
+                    "version": "1.0.0",
+                    "main": "src/index.js",
+                    "license": "MIT",
+                    "scripts": {
+                        "dev": "nodemon"
+                    },
+                    "dependencies": {
+                        "express": "^4.17.1"
+                    },
+                    "devDependencies": {
+                        "nodemon": "^2.0.6"
+                    }
+                }
+
+            - Atualmente quando executamos o servidor, ele nao retorna nada, e nao sabemos direito se ele realemtne está executando, entao foi adicionado no index o seguinte código para termos esse retorno...
+
+            ..    app.listen(3333, () => {
+            ..        console.log('Back-end started!');
+            ..    });
+
+            // Agora toda vez que executamos o comando 'yarn dev' para subir o servidor. No terminal retorna a mensagem 'Back-end started!' que informa que o servidor está rodando
+
+    }
+
+    - Métodos HTTP {
+        // Os metodos Http mais utilizados sao...
+            GET: Buscar informações do back-end
+            POST: Criar uma informação no back-end
+            PUT: Alterar uma informação no back-end
+            DELETE: Deletar uma informação
+    }
+
+    - Tipos de parametro {
+
+        // Query Params: Filtros e paginação
+            // Para podermos adicionar query parms na rota utilizamos interrogação... http://localhost:3333/projects?title=React
+            // Para continuar adicionando parametros posso colocar o &
+        // Route Params:
+        // Request Body:
+    }
+
 }
 
