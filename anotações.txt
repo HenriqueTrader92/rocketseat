@@ -1,0 +1,88 @@
+-> Preparando os estudos
+    // Aqui foi falado sobre o curso, a didática, como devemos estudar, anotar...
+    // Apos isso ele passou algumas dicas para vermos depois, como anotei abaixo
+    - Ideias para apps {
+        app.ideas.
+            https://github.com/florinpop17/app-ideas
+    }
+
+    - Ideias para layouts {
+        Dribble.
+            https://dribbble.com/
+        Pinterest.
+            https://br.pinterest.com/
+            ... exemp: Pesquisar por "weather app"
+    }
+}
+
+-> Ambiente de desenvolvimento {
+    // Para configurar o ambiente de desinvolvimento começamos instalando o Node. Se usar o instalador do site ele ja instala o Chocolatey
+    - Node & Chocolatey {
+        https://nodejs.org/en/
+    }
+
+    // Usaremos o gerenciador de pacotes Yarn, apos instalar o Chocolatey ja podemos instalar o Yarn usando o seguinte comando...
+        $ choco install yarn
+    
+    // Após isso ele aconcelha usar o "Terminal Oh My Zsh" para melhorar a apresentação dos Terminais que vamos usar, acho desnecessário, entao nao instalei
+
+    // Claro que foi pedido para usarmos o VSCode, como ja utilizo ignorei essa parte também
+
+    // Após isso ele instala o GIT, como ja utilizo muito, também nao achei necessário fazer essa aula, caso eu precise ja tenho anotações sobre isso
+        // PS: Ele utiliza configurações globais para o GIT, tais como usar 'ci' para 'commit' ou 'st' para 'status'. Tambem achei desnecessário
+
+    // Agora fomos para instação das extenções que vamos usar...
+
+    - Extenções {
+        JSON Viewer
+            // Começaões com a extenção JSON Viewer, entramos na loja de extenções da google e por la mesmo foi baixado
+            // Deixa os retornos em Json muito mais apresentáveis e fáceis de ler
+
+        React Developer Tools
+            // Quando entrar em um site que utiliza react o icone da extenção vai acender
+            // Após isso foi falado sobre a extenção React Developer Tools, vamos usar muito para identificar as páginas com código em React
+            // Instala do mesmo modo, é so ir nas loja de extenções do google e procurar pra instalar
+        Octotree
+            // Extenção serve para quando acessar um repositório no GitHub mostrar toda estrutura de páginas clicando no icone da extenção do lado esquerdo
+    }
+
+    - Ferramentas {
+        Notion
+            https://www.notion.so/
+            // Ferramenta para anotações. Muito boa, estou usando em todos os projetos a partir de Agora
+        Whimsical
+            https://whimsical.com/
+            //Ferramenta para uso visual, como criar fluxogramas, tabelas, Desingnes de telas...
+        DevDocs
+            https://devdocs.io/
+            // Ferramenta que centraliza documentações das linguagens ou ferramentas
+            // Aconcelho usar versao desktop onde posso baixar já as codumentações que sei que vou usar
+            // Procurar dentro da documentação fica muito fácil
+        Insominia
+            https://insomnia.rest/download/
+            // É um cliente http que vai permitir a gente fazer requisições na API
+            // Vai ser usado muito ao longo do curso
+            // Pode usar o Postman no lugar tranquilamente
+    }
+}
+
+-> Back-end com Node.js {
+    - Conceitos NodeJS {
+        // Node permite usarmos JavaScript no back-end
+        // Node não é uma linguagem, ele é uma plataforma
+
+        - O que é NPM ou Yarn?
+            // Ferramenta comparada com Composer do PHP
+            // Basicamente permite que instalemos bibliotecas de terceiros
+
+        - Porque vamos utilizar no curso o Yarn em vez do NPM?
+            // O yarn é muito mais rapido e está avançando mais rapido
+
+        - Porque esta se falando e usando tanto Node?
+            // Arquitetura baseada em eventos(Event-loop)
+            // Roda eventos em pilha e rodando constantemente(Call Stack)
+            // Single-thread, executa somente em uma thread
+            // Input e Output nao bloqueante(Non-blocking I/O), nao preciso retornar todos os dados so de uma vez, posso passar por partes
+    }
+}
+
