@@ -209,8 +209,21 @@
         // Query Params: Filtros e paginação
             // Para podermos adicionar query parms na rota utilizamos interrogação... http://localhost:3333/projects?title=React
             // Para continuar adicionando parametros posso colocar o &
+            // Lembrar que podemos enviar os query parms pelo próprio Insominia
+
+            // dessa formar eu posso pegar os querys...
+                .. const query = request.query;
         // Route Params:
+            // Identificar recursos na hora de atualizar ou deletar
+            // Dessa forma eu pego os params...
+                .. const params = request.params;
         // Request Body:
+            // O conteudo n a hora de criar ou editar um recurso (JSON)
+            // Pegar informações do body...
+                .. const body = request.body;
+
+        Por padrao o Express nao reconhece um body Json, entao temos que dizer no corpo do codigo para ele usar isso...
+        ..  app.use(express.json());
     }
 
 }
