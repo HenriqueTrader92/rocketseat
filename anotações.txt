@@ -226,5 +226,32 @@
         ..  app.use(express.json());
     }
 
+    - Aplicação funcional {
+        // Começamos criando uma array chamado projects e colocando para o get verificaqr esse array
+        // Depois disso foi instalado a biblioteca uuidv4
+            $ yarn add uuidv4
+            // Esse uuidv4 foi instalado para conseguirmos ficar criando id's
+
+        // Para essa aula a melhor forma é ler bem o arquivo index, mas no geral foi mostrado varios metodos legais que vou falar abaixo
+        Metodos {
+            filter... Esse metodo serve para filtrar informações...
+            ..  projects.filter(project => project.title.includes(title))
+            includes... Esse ja usei para pesquisar dentro de uma coluna informações que eu queria
+            push... foi usado para incluir novas informações no array
+            findIndex... Para achar o index do item no array
+            splice... Usado para deletar
+
+            // Todos esses metodos podem ser melhores vistos se olhados no arquivos index
+        }
+    }
+
+    - Middlewares {
+        // Servem basicamente como um interceptador de requisições que pode interromper totalmente a requisição ou alterar dados da requisição.
+        // Next é um dos parametros principais pra reconhecer um middleware, poruqe se ele nao for colocado nao vai ter continuidade aos outros procedimentos
+        // Lembrar que pode se executar um next e depois um código, é so tirar o return do next
+
+        // Nessa aula entendi todo conceito de middleware, como ela é basicamente código, fica bem melhor visualizala olhando diretamente no arquivo index, para ficar melhor la vou deixar comentários para lembrar esse local
+    }
+
 }
 
