@@ -255,3 +255,33 @@
 
 }
 
+-> Front-end com ReactJs {
+    - Conceitos ReactJs {
+        // Plataforma de contruções de interface
+        // Utiliza SPA - Single-Page-Applications
+        // Podemos chamar de Frameworks? SIM 
+        // Tudo fica dentro do JavaScript 
+
+        - Vantagens {
+        // Organização do código
+        // Divisao de responsabilidade
+        // Uma API multiplos clientes
+
+        // JSX poder usar HTML no Js
+        }
+
+        - Babel/ WebPack {
+        // O browser nao entende nosso código
+        // Converte o Js em algo que o browser conheça
+        // Webpack transforma tudo em um código
+        }
+    }
+
+    - Configurando o Babel {
+        
+    }
+
+}
+
+    
+
