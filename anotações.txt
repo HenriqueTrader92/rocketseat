@@ -278,7 +278,70 @@
     }
 
     - Configurando o Babel {
-        
+        - Começamos criando uma nova pasta para deixar so a parte de front
+        $ mkdir frontend
+        $ cd frontend
+
+        // depois temos que criar uma pasta 'src' e uma 'public'
+
+        // assim que entrar na pasta ja de o init
+        $ yarn init
+        // mesma coisa que fizemos com o node
+
+        // Agora temos q dar um...
+        $ yarn add react-dom
+        // Para instalarmos o react para versao WEB
+
+        // Criar um arquivo index.html dentro da pasta public
+
+        // Agora precisamos usar o babel para converter o codigo react para um codigo que o browser entenda
+        // fazendo isso com o WebPack 
+        // Para fazer isso temos que adicionar alguns pacotes, como digitado no codigo abaixo...
+        $ yarn add @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli
+
+        // agora temos que criar um arquivo para configurações do babel
+        // na raiz do projeto crie o arquivo 'babel.config.js
+
+        // Apos isso temos que escrever dentro desse arquivos as configurações
+        // na propria documentação do babel mostra varias confiuraões possiveis, mas por momento iremos colocar so o presets
+
+        //presets sao conjuntos de configurações criadas por terceiros...
+
+        // foi criado um arquivo 'script.js' dentro da pasta 'public'
+        // foi criado um arquivo 'index.js' dentro da pasta 'src'
+
+        // Foi instalado tb uma pacote para usar o babel no terminal
+        $ yarn add @babel/cli
+        // isso cria uma interface de linha de comando para usarmos no terminal
+        // apos isso eu ja posso escrever um comando no terminal para ele converter meu aquivo js para algo que o browser entenda, usando o comando...
+        $ yarn babel src/index.js --out-file public/bundle.js
+
+        // Pronto, apos esse comando foi criado um arquivo bundle na pasta public onde ele podera ser lido por qualquer browser
+    }
+
+    - Configurando o Webpack {
+        // Começamos criando na raiz do projeto um arquivo 'webpack.config.js'
+
+        // Aogra temos que escrever as configurações do webpack, mas antes instale o loader...
+        $ yarn add babel-loader
+
+        // Apos escrever todas configurações no 'webpack.config.js' rode o comando abaixo para ativar essas configurações....
+        $ yarn webpack --mode development
+
+        // O webpack nao fica compilando o arquivo direto, entao precisamos instlaar um servidor para isso...
+        $ yarn add webpack-dev-server -D
+
+        // Apos colocar o devServer nas configurações eu devo rodar o servidor...
+        **$ yarn webpack-dev-server --mode development
+        // Apos a atualizacao da versao do webpack nao podemos mais usar o comando acima, em vez dele uso esse...
+        $ yarn webpack serve --mode development
+
+        // Apos isso o servidor ira ficar rodando no endereço: http://localhost:8080/
+        // veja que ao fazer qualquer atualização no codigo o servidor ja compila e atualiza as informações, sem recarregar a pagina         
+    }
+
+    - Componentização {
+        // React é totalmente baseado em componentes, entao tudo dentro dele é um componente
     }
 
 }
